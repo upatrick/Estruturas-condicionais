@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trick</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #292929;
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .content {
+                text-align: center;
+                max-width: 600px;
+                padding: 20px;
+                background-color: #333;
+                color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <p>Digite um numero de 1 a 7 equivalente aos dias da semana:</p>
+                <input type="number" id="value" />
+                <div id="inner"></div>
+                <button onclick="verificar()">Verificar</button>
+            </div>
+        </div>
+        <script>
+            function verificar() {
+                const day = parseInt(document.getElementById("value").value);
+                switch (day) {
+                    case 1:
+                        inner.innerHTML = `<h3>Domingo`;
+                        break;
+                    case 2:
+                        inner.innerHTML = `<h3>Segunda`;
+                        break;
+                    case 3:
+                        inner.innerHTML = `<h3>Terça`;
+                        break;
+                    case 4:
+                        inner.innerHTML = `<h3>Quarta`;
+                        break;
+                    case 5:
+                        inner.innerHTML = `<h3>Quinta`;
+                        break;
+                    case 6:
+                        inner.innerHTML = `<h3>Sexta`;
+                        break;
+                    case 7:
+                        inner.innerHTML = `<h3>Sabado.`;
+                        break;
+                    default:
+                        inner.innerHTML = `<h3>Valor invalido.`;
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trick</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #292929;
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .content {
+                text-align: center;
+                max-width: 600px;
+                padding: 20px;
+                background-color: #333;
+                color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <p>Digite seu idade:</p>
+                <input type="number" id="age" />
+                <p>Digite seu peso:</p>
+                <input type="number" id="kg" />
+                <div id="inner"></div>
+                <button onclick="verificar()">Verificar</button>
+            </div>
+        </div>
+        <script>
+            function verificar() {
+                const weight = document.getElementById("kg").value;
+                const age = document.getElementById("age").value;
+
+                if (age < 12) {
+                    inner.innerHTML = `<h3>Infantil.`;
+                } else if (age >= 13 && age <= 16 && weight <= 40) {
+                    inner.innerHTML = `<h3>Juvenil leve.`;
+                } else if (age >= 13 && age <= 16 && weight >= 40) {
+                    inner.innerHTML = `<h3>Juvenil pesado.`;
+                } else if (age >= 17 && age <= 24 && weight <= 40) {
+                    inner.innerHTML = `<h3>Sênior leve.`;
+                } else if (age >= 17 && age <= 24 && weight >= 45 && weight <= 60) {
+                    inner.innerHTML = `<h3>Sênior médio.`;
+                } else if (age >= 17 && age <= 24 && weight > 60) {
+                    inner.innerHTML = `<h3>Sênior pesado.`;
+                } else {
+                    inner.innerHTML = `<h3>Veterano.`;
+                }
+            }
+        </script>
+    </body>
+</html>

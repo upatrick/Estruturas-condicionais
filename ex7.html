@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trick</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #292929;
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .content {
+                text-align: center;
+                max-width: 600px;
+                padding: 20px;
+                background-color: #333;
+                color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <p>Sua conta começa com R$100, digite o valor que deseja retirar:</p>
+                <input type="number" id="valueRemove" />
+                <div id="inner"></div>
+                <button onclick="retirar()">Retirar</button>
+            </div>
+        </div>
+        <script>
+            function retirar() {
+                let accountUser = 100;
+                let valueRemove = document.getElementById("valueRemove").value;
+                let accountRemove = parseFloat(valueRemove) + 4.5;
+                accountUser -= accountRemove;
+
+                if (accountRemove > 100) {
+                    inner.innerHTML = `<h3>Valor de saque maior do que o saldo.`;
+                } else {
+                    inner.innerHTML = `<h3>Você retirou R$${valueRemove} com R$4.50 de taxa ficou um valor total de ${accountRemove} e sobrou na sua conta R$${accountUser}.`;
+                }
+            }
+        </script>
+    </body>
+</html>
